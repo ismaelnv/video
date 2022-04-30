@@ -14,7 +14,7 @@ public class Categoria {
 
         this.id = id;
         this.name = name;
-
+        
     }
     
     public Integer getId(){
@@ -38,3 +38,4 @@ public class Categoria {
 
     }
 }
+   
