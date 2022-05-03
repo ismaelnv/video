@@ -72,19 +72,13 @@ public class VideosService {
             if(video.getId() == id){
 
                 video.setViews(video.getViews()+1);
-                videos.set(video.getId(), video);
+        
             }
         }
         return "Was updated correctly";
     }
 
-   /* public List<Video> popularVideos(){
-        for (Video video : videos) {
-            
-        }
-
-        
-    }*/
+   
 
     public String seenVideos(Integer id ){
 
@@ -92,14 +86,62 @@ public class VideosService {
 
             if(video.getId() == id){
 
-                video.setSeen(video.getSeen()+"visto");
-                videos.set(video.getId(),video);
+                video.setSeen("visto");
+
             }
             
         }
         return "Was updated correctly";
 
-    }     
+    }   
+    
+    public List<Video> mostPopularVideos(){
+
+        for (int i = 0; i < videos.size(); i++) {
+
+            if(videos.get(i).getViews() >= 50){
+
+                return videos;
+
+            }
+            
+        }
+        return null;
+    }
+
+   /* public List<Video> watchedVideos(){
+
+        for (int i = 0; i < videos.size(); i++) {
+            
+            if( videos.get(i).getSeen() ==  "videos" ){
+
+
+                return videos;
+
+            }
+            
+        }
+        return null;
+
+    }*/
+
+    public List<Video> watchedVideos(){
+
+        for (Video video : videos) {
+
+            if(video.getSeen() == "visto" ){
+ 
+                return videos;
+
+            }
+            
+        }
+        return null;
+    }
+
+
+
+
 
 
 

@@ -64,6 +64,20 @@ public class VideosController {
 
 	}
 
+	@GetMapping("/videos/populares")
+	public List<Video> mostPopularVideos(){
+
+		return videos.mostPopularVideos();
+	}
+
+	@GetMapping("/videos/vistos")
+	public List<Video> watchedVideos(){
+
+		return videos.watchedVideos();
+	}
+
+
+
 
     
 }
