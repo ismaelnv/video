@@ -97,6 +97,8 @@ public class VideosService {
     
     public List<Video> mostPopularVideos(){
 
+        List<Video> vistas = new ArrayList<>();
+        
         for (int i = 0; i < videos.size(); i++) {
 
             if(videos.get(i).getViews() >= 50){
@@ -109,34 +111,20 @@ public class VideosService {
         return null;
     }
 
-   /* public List<Video> watchedVideos(){
-
-        for (int i = 0; i < videos.size(); i++) {
-            
-            if( videos.get(i).getSeen() ==  "videos" ){
-
-
-                return videos;
-
-            }
-            
-        }
-        return null;
-
-    }*/
-
     public List<Video> watchedVideos(){
+
+        List<Video> vistos = new ArrayList<>();
 
         for (Video video : videos) {
 
-            if(video.getSeen() == "visto" ){
- 
-                return videos;
+            if(video.getSeen() == "visto"){
+
+                vistos.add(video);
 
             }
             
         }
-        return null;
+        return vistos;
     }
 
 
