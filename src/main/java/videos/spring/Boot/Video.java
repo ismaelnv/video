@@ -1,5 +1,6 @@
 package videos.spring.Boot;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Video {
@@ -93,5 +94,9 @@ public class Video {
 
         this.seen =  seen;
     }
+
+   
+
+    
 
 }

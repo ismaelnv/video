@@ -1,7 +1,11 @@
 package videos.spring.Boot;
 
+import java.security.cert.CollectionCertStoreParameters;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
@@ -101,14 +105,17 @@ public class VideosService {
         
         for (int i = 0; i < videos.size(); i++) {
 
-            if(videos.get(i).getViews() >= 50){
+            if(videos.get(i).getViews() >= 100){
 
-                return videos;
+                vistas.add(videos.get(i));
 
-            }
-            
+            }   
         }
-        return null;
+        
+        Collections.sort(vistas, new ComparadorVideos());
+
+        return vistas;
+        
     }
 
     public List<Video> watchedVideos(){
